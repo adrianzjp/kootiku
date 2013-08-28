@@ -1,0 +1,3 @@
+tiku_questions_homepage:
+    pattern: /
+    defaults: { _controller: TikuQuestionsBundle:Default:index }

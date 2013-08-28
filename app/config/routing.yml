@@ -1,0 +1,5 @@
+tiku_questions:
+    resource: "@TikuQuestionsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
