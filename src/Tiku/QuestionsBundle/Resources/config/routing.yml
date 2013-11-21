@@ -1,3 +1,31 @@
-tiku_questions_homepage:
-    pattern: /
+_welcome:
+    pattern:  /
     defaults: { _controller: TikuQuestionsBundle:Default:index }
+
+_login:
+    pattern: /login
+    defaults: { _controller: TikuQuestionsBundle:Default:login }
+    
+    
+_courses:
+    pattern: /courses
+    defaults: { _controller: TikuQuestionsBundle:Default:courses }
+    
+_register:
+    pattern: /reg
+    defaults: { _controller: TikuQuestionsBundle:Default:register}
+
+_awards:
+    pattern: /awards
+    defaults: { _controller: TikuQuestionsBundle:Default:awards}
+_qa:
+    pattern: /qa
+    defaults: { _controller: TikuQuestionsBundle:Default:qa}
+
+_tiku:
+    pattern: /tiku
+    defaults: { _controller: TikuQuestionsBundle:Default:tiku}
+
+_me:
+    pattern: /me
+    defaults: { _controller: TikuQuestionsBundle:Default:me}

@@ -1,0 +1,32 @@
+{% extends 'TikuQuestionsBundle::layout.html.twig' %}
+
+{% block css %}
+	<style>
+		.nav-zjp li a{padding:5px;}
+	
+	</style>
+
+
+{% endblock %}
+
+{% block body %}
+        <div class="row-fluid">
+                <div class="span4" style="border-right: 1px solid #CCC;">
+                <ul class="nav nav-list nav-zjp" style="text-align:center;">
+{# 						  <li class="nav-header">我的账户</li>#}
+						  <li><a href="#">练习历史</a></li>
+						  <li><a href="#">我的错题</a></li>
+						  <li><a href="#">我的收藏</a></li>
+						  <li><a href="#">我的积分</a></li>
+						  <li class="active"><a href="#">我的评估</a></li>
+				</ul>
+                
+                </div>
+                <div class="span8">
+                
+                
+                {% block content %}{% endblock %}
+                </div>
+         </div>
+{% endblock %}	
+	

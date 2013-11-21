@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title%}首页{% endblock %}</title>
+
+
+
+<link rel="stylesheet" href="{{ asset('bundles/tiku/css/bootstrap.css') }}" />
+<link rel="stylesheet" href="{{ asset('bundles/tiku/css/bootstrap-responsive.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('bundles/tiku/css/messenger-theme-future.css') }}" />
+<link rel="stylesheet" href="{{ asset('bundles/tiku/css/messenger.css') }}" />
+{% block  css %}{% endblock %}
+
+<script src="{{ asset('bundles/tiku/js/jquery.js') }}"></script>
+<script src="{{ asset('bundles/tiku/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('bundles/tiku/js/messenger.js') }}"></script>
+
+{% block  js %}{% endblock %}
+
+<script>
+$(document).ready(function(e) {
+
+	/*
+    Messenger.options = {
+	extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+	theme: 'future'
+	}
+	
+	Messenger().post({
+	  message: "Weeeeee",
+	  hideAfter: 3,
+	  hideOnNavigate: true
+	});*/
+    {% if js is defined %}
+    {{ js|raw }}
+    {% endif %}
+
+    {% block jqueryjs %}
+    {% endblock %}
+    
+
+});
+
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+<div style="width:1000px;margin:0px auto;">
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="/app_dev.php/" class="brand">酷题库</a>
+						<div class="nav-collapse collapse navbar-responsive-collapse">
+							<ul class="nav">
+{# 								<li id="mainpage">#}
+{# 									<a href="/app_dev.php/">主页</a>#}
+{# 								</li>#}
+{# 								<li id="courses">#}
+{# 									<a href="/app_dev.php/courses">课程</a>#}
+{# 								</li>#}
+								<li id="qa">
+									<a href="/app_dev.php/qa">问答</a>
+								</li>
+								<li id="tiku">
+									<a href="/app_dev.php/tiku">错题库</a>
+								</li>
+								<li id="reg">
+									<a href="/app_dev.php/reg">现在注册</a>
+								</li>
+								
+							</ul>
+							<ul class="nav pull-right">
+								<li id="awards">
+									<a href="/app_dev.php/awards">奖品</a>
+								</li>
+								<li id="login">
+									<a href="/app_dev.php/login">登录</a>
+								</li>
+								<li class="divider-vertical">
+								</li>
+								<li class="dropdown">
+									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">我的账户<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="/app_dev.php/me"><i class=" icon-pencil"></i>&nbsp&nbsp练习历史</a>
+										</li>
+										<li>
+											<a href="#"><i class="icon-bell"></i>&nbsp&nbsp我的错题</a>
+										</li>
+										<li>
+											<a href="#"><i class=" icon-heart"></i>&nbsp&nbsp我的收藏</a>
+										</li>
+										<li>
+											<a href="#"><i class="icon-shopping-cart"></i>&nbsp&nbsp我的积分</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#"><i class="icon-off"></i>&nbsp&nbsp退出</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			
+			{% block body %}
+			{% endblock %}
+			<div class="row-fluid" style="border-top:1px solid #F2F2F2;padding-top:10px;">
+				<div class="span8">
+					<blockquote>
+						<p>
+							github是一个全球化的开源社区.
+						</p> <small>关键词 <cite>开源</cite></small>
+					</blockquote>
+				</div>
+				<div class="span4">
+					 <address> <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

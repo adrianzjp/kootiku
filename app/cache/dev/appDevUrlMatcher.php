@@ -133,13 +133,48 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // tiku_questions_homepage
+        // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'tiku_questions_homepage');
+                return $this->redirect($pathinfo.'/', '_welcome');
             }
 
-            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::indexAction',  '_route' => 'tiku_questions_homepage',);
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::indexAction',  '_route' => '_welcome',);
+        }
+
+        // _login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::loginAction',  '_route' => '_login',);
+        }
+
+        // _courses
+        if ($pathinfo === '/courses') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::coursesAction',  '_route' => '_courses',);
+        }
+
+        // _register
+        if ($pathinfo === '/reg') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::registerAction',  '_route' => '_register',);
+        }
+
+        // _awards
+        if ($pathinfo === '/awards') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::awardsAction',  '_route' => '_awards',);
+        }
+
+        // _qa
+        if ($pathinfo === '/qa') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::qaAction',  '_route' => '_qa',);
+        }
+
+        // _tiku
+        if ($pathinfo === '/tiku') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::tikuAction',  '_route' => '_tiku',);
+        }
+
+        // _me
+        if ($pathinfo === '/me') {
+            return array (  '_controller' => 'Tiku\\QuestionsBundle\\Controller\\DefaultController::meAction',  '_route' => '_me',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
